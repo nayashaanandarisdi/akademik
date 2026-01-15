@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION['login'])) {
+    // Jika belum login, tendang balik ke halaman login.php di root
+    // header("Location: /akademik/login.php"); 
+    exit;
+}
+?>
 <?php 
     require ('../koneksi.php');
     $query = "SELECT mahasiswa.*, prodi.nama_prodi 
